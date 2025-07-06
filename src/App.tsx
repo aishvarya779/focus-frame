@@ -1,5 +1,11 @@
 import './App.css'
+import { CategoryFilter } from './components/CategoryFilter';
 import { Header } from './components/Header'
+import { Lightbox } from './components/Lightbox';
+import { PhotoGrid } from './components/PhotoGrid';
+import { SearchBar } from './components/SearchBar';
+import { ViewToggle } from './components/ViewToggle';
+import { categories } from './data/photos';
 import { usePhotoGallery } from './hooks/usePhotoGalllery'
 
 function App() {
@@ -26,13 +32,13 @@ function App() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Search and Filters */}
         <div className="space-y-6 mb-8">
-          {/* <SearchBar
+          <SearchBar
             searchTerm={searchTerm}
             onSearchChange={setSearchTerm}
-          /> */}
+          />
 
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            {/* <CategoryFilter
+            <CategoryFilter
               categories={categories}
               selectedCategory={selectedCategory}
               onCategoryChange={setSelectedCategory}
@@ -41,7 +47,7 @@ function App() {
             <ViewToggle
               viewMode={viewMode}
               onViewModeChange={setViewMode}
-            /> */}
+            />
           </div>
         </div>
 
@@ -53,7 +59,7 @@ function App() {
         </div>
 
         {/* Photo Grid */}
-        {/* {filteredPhotos.length > 0 ? (
+        {filteredPhotos.length > 0 ? (
           <PhotoGrid
             photos={filteredPhotos}
             onPhotoClick={setSelectedPhoto}
@@ -64,17 +70,17 @@ function App() {
             <p className="text-gray-500 text-lg">No photos found matching your criteria.</p>
             <p className="text-gray-400 mt-2">Try adjusting your search or category filter.</p>
           </div>
-        )} */}
+        )}
 
         {/* Lightbox */}
-        {/* <Lightbox
+        <Lightbox
           photo={selectedPhoto}
           onClose={() => setSelectedPhoto(null)}
           onNext={handleNextPhoto}
           onPrevious={handlePreviousPhoto}
           hasNext={hasNext}
           hasPrevious={hasPrevious}
-        /> */}
+        />
       </main>
     </div>
   )
