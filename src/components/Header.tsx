@@ -11,7 +11,7 @@ export const Header: React.FC = () => {
                             <Camera className="h-6 w-6 text-white" />
                         </div>
                         <div>
-                            <h1 className="text-2xl font-bold text-gray-900">PhotoGallery</h1>
+                            <h1 className="text-2xl font-bold text-gray-900">Focus-Frame</h1>
                             <p className="text-sm text-gray-600">Professional Photography Collection</p>
                         </div>
                     </div>
