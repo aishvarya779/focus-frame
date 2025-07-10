@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { X, ChevronLeft, ChevronRight, Download, Heart } from 'lucide-react';
-import { type Photo } from '../types/Photo';
+import { type AnimeCharacter, type Photo } from '../types/Photo';
 
 interface LightboxProps {
-    photo: Photo | null;
+    photo: AnimeCharacter | null;
     onClose: () => void;
     onNext: () => void;
     onPrevious: () => void;
@@ -71,8 +71,8 @@ export const Lightbox: React.FC<LightboxProps> = ({
             {/* Main image */}
             <div className="relative max-w-7xl max-h-[90vh] mx-4">
                 <img
-                    src={photo.url}
-                    alt={photo.title}
+                    src={photo.image}
+                    alt={photo.name}
                     className="max-w-full max-h-full object-contain"
                 />
             </div>
@@ -82,13 +82,13 @@ export const Lightbox: React.FC<LightboxProps> = ({
                 <div className="max-w-7xl mx-auto">
                     <div className="flex items-center justify-between">
                         <div className="text-white">
-                            <h2 className="text-2xl font-bold mb-1">{photo.title}</h2>
+                            <h2 className="text-2xl font-bold mb-1">{photo.name}</h2>
                             <p className="text-gray-300 mb-2">{photo.description}</p>
                             <p className="text-sm text-gray-400">
-                                by {photo.photographer} • {photo.category}
+                                by {photo.race} • {photo.affiliation}
                             </p>
                             <div className="flex flex-wrap gap-2 mt-2">
-                                {photo.tags.map((tag, index) => (
+                                {photo.tags?.map((tag, index) => (
                                     <span
                                         key={index}
                                         className="text-xs bg-white/20 backdrop-blur-sm px-2 py-1 rounded-full text-white"

@@ -1,4 +1,6 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, } from 'react';
+// import { NekosiaAPI } from 'nekosia.js'; // Assuming this is the correct import for NekosiaAPI
+// import axios from 'axios';
 import { type Photo } from '../types/Photo';
 import { photos } from '../data/photos';
 
@@ -7,6 +9,7 @@ export const usePhotoGallery = () => {
     const [selectedCategory, setSelectedCategory] = useState('All');
     const [viewMode, setViewMode] = useState<'grid' | 'masonry'>('grid');
     const [selectedPhoto, setSelectedPhoto] = useState<Photo | null>(null);
+
 
     const filteredPhotos = useMemo(() => {
         return photos.filter(photo => {
@@ -55,6 +58,6 @@ export const usePhotoGallery = () => {
         handleNextPhoto,
         handlePreviousPhoto,
         hasNext,
-        hasPrevious
+        hasPrevious,
     };
 };

@@ -1,10 +1,10 @@
 import React from 'react';
 import { PhotoCard } from './PhotoCard';
-import { type Photo } from '../types/Photo';
+import { type AnimeCharacter, type Photo } from '../types/Photo';
 
 interface PhotoGridProps {
-    photos: Photo[];
-    onPhotoClick: (photo: Photo) => void;
+    photos: AnimeCharacter[];
+    onPhotoClick: (photo: AnimeCharacter) => void;
     viewMode: 'grid' | 'masonry';
 }
 
