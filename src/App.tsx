@@ -7,7 +7,6 @@ import { PhotoGrid } from './components/PhotoGrid';
 import { SearchBar } from './components/SearchBar';
 import { ViewToggle } from './components/ViewToggle';
 import { categories } from './data/photos';
-import { usePhotoGallery } from './hooks/usePhotoGalllery'
 import type { AnimeCharacter } from './types/Photo';
 
 function App() {

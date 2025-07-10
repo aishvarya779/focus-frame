@@ -1,6 +1,6 @@
 import React from 'react';
 import { PhotoCard } from './PhotoCard';
-import { type AnimeCharacter, type Photo } from '../types/Photo';
+import { type AnimeCharacter } from '../types/Photo';
 
 interface PhotoGridProps {
     photos: AnimeCharacter[];

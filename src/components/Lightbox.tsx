@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { X, ChevronLeft, ChevronRight, Download, Heart } from 'lucide-react';
-import { type AnimeCharacter, type Photo } from '../types/Photo';
+import { type AnimeCharacter } from '../types/Photo';
 
 interface LightboxProps {
     photo: AnimeCharacter | null;
