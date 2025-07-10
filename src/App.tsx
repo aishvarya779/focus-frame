@@ -73,6 +73,20 @@ function App() {
     fetchAnimeStar();
   }, []);
 
+  const filteredPhotos = useMemo(() => {
+    return animeStars.filter(photo => {
+      const matchesSearch =
+        photo.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        photo.description?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        (photo.tags && photo.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase())));
+      const matchesCategory =
+        selectedCategory === 'All' ||
+        (photo.race && photo.race === selectedCategory) ||
+        (photo.affiliation && photo.affiliation === selectedCategory);
+      return matchesSearch && matchesCategory;
+    });
+  }, [animeStars, searchTerm, selectedCategory]);
+
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
@@ -107,9 +121,9 @@ function App() {
         </div>
 
         {/* Photo Grid */}
-        {animeStars.length > 0 ? (
+        {filteredPhotos.length > 0 ? (
           <PhotoGrid
-            photos={animeStars}
+            photos={filteredPhotos}
             onPhotoClick={setSelectedPhoto}
             viewMode={viewMode}
           />
